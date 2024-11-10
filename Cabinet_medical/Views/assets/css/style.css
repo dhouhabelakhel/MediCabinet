@@ -1408,7 +1408,7 @@ button.bg-danger:hover {
 	line-height: 60px;
 }
 .header .header-left .logo img {
-    max-height: 40px;
+    max-height: 70px;
     width: auto;
 }
 .header-left .logo.logo-small {
@@ -1590,7 +1590,7 @@ button.bg-danger:hover {
     display: block;
     font-size: 14px;
     margin-bottom: 5px;
-    padding: 0 25px;
+    padding: 25px;
 }
 .sidebar-overlay {
     background-color: rgba(0, 0, 0, 0.6);
@@ -1686,7 +1686,7 @@ html.menu-opened body {
 	transition: all 0.2s ease-in-out 0s;
 }
 .sidebar-menu {
-    padding: 15px;
+    padding: 20px;
 }
 .sidebar-menu ul {
 	font-size: 15px;
