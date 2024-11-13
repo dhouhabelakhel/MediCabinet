@@ -72,9 +72,16 @@ Ce projet est une application de gestion de cabinet médical développée en Nod
    ```bash
    git clone https://github.com/dhouhabelakhel/MediCabinet.git
    cd MediCabinet
-2. Installez les dépendances 
+2. Installez les dépendances:
+   ```bash
    npm install 
-3. Installer Express
-    npm install express 
-4. Lancez le serveur 
+3. Installer Express :
+   ```bash
+   npm install express 
+
+4. Installer sequelize {ORM}
+   npm install sequelize mysql
+
+4. Lancez le serveur :
+     ```bash
    npm start

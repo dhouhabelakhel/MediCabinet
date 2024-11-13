@@ -1,0 +1,9 @@
+{
+    "developement":{
+        "username":"root",
+        "password":"",
+        "database":"medicabinet",
+        "host":"localhost",
+        "dialect":"mysql"
+    }
+}
