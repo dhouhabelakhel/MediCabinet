@@ -29,7 +29,7 @@ const Rdv=sequelize.define('rdv',{
     },
 consultation:{
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
     references: {
         model: 'consultation',  
         key: 'id'

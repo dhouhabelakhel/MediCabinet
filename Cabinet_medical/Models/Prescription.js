@@ -20,6 +20,16 @@ const Prescription=sequelize.define('prescription',{
         type:DataTypes.DATE,
         allowNull:false,
     },
+    consultation:{
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: 'consultation',  
+            key: 'id'
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE' 
+    },
     createdAt: {
         allowNull: false,
         type: DataTypes.DATE

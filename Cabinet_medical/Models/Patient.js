@@ -37,7 +37,7 @@ const Patient=sequelize.define('patient',{
       allowNull:false
     },
     genre:{
-      type:DataTypes.ENUM['f','m'],
+      type:DataTypes.ENUM('f','m'),
       allowNull:false
     },
     adresse:{
@@ -45,7 +45,7 @@ const Patient=sequelize.define('patient',{
       allowNull:false
     },
     groupe_sanguin:{
-      type:DataTypes.ENUM['a_positif','b_positif','a_negative','b_negative','ab_postif','ab_negative','o_postif','o_negative'],
+      type:DataTypes.ENUM('a_positif','b_positif','a_negative','b_negative','ab_postif','ab_negative','o_postif','o_negative'),
       allowNull:false
     },
     num_dossier:{

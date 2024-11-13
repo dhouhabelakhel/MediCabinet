@@ -32,7 +32,7 @@ const Medcien=sequelize.define('medcien',{
             allowNull:false
           },
           genre:{
-            type:DataTypes.ENUM['f','m'],
+            type:DataTypes.ENUM('f','m'),
             allowNull:false
           },
           adresse_cabinet:{
