@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+</head>
+<body>
+    <!-- Page Wrapper -->
+    <div class="page-wrapper">
+        <div class="content container-fluid">
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3 class="page-title">Appointments</h3>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Appointments</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Recent Orders -->
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="datatable table table-hover table-center mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Patient Name</th>
+                                            <th>Appointment Time</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% listeRdvs.forEach(rdv => { %>
+                                            <tr>
+                                                <td>
+                                                    <h2 class="table-avatar">
+                                                      
+                                                        <a href="profile.html"><%= rdv.patient.nom %> <%= rdv.patient.prenom %></a>
+                                                    </h2>
+                                                </td>
+                                                <td>
+                                                    <%= new Date(rdv.date_rdv).toLocaleString('en-US', {
+                                                        weekday: 'short',
+                                                        year: 'numeric',
+                                                        month: 'short',
+                                                        day: 'numeric',
+                                                        hour: 'numeric',
+                                                        minute: 'numeric',
+                                                        hour12: true
+                                                    }) %>
+                                                </td>
+                                                <td>
+                                                    <div class="status-toggle">
+                                                        <input type="checkbox" id="status_<%= rdv._id %>" class="check" <%= rdv.etat_rdv ? 'checked' : '' %>>
+                                                        <label for="status_<%= rdv._id %>" class="checktoggle">checkbox</label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        <% }) %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Recent Orders -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Page Wrapper -->
+</body>
+</html>

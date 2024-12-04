@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+      
+    </head>
+    <body>
+	
+		  
+		
+			<div class="page-wrapper">
+			
+                <div class="content container-fluid">
+					
+					<!-- Page Header -->
+					<div class="page-header">
+						<div class="row">
+							<div class="col-sm-12">
+								<h3 class="page-title">Welcome <%= admin.nom_prenom %>!</h3>
+								<ul class="breadcrumb">
+									<li class="breadcrumb-item active"> You have <%= totalRdvs %> appointments today <a href="profile.html" class="avatar avatar-sm mr-2">
+										<img class="avatar-img" src="/img/specialities/specialities-04.png" alt="Speciality">
+									</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+			
+					<div class="row">
+					
+						<div class="col-xl-3 col-sm-6 col-12">
+							<div class="card">
+								<div class="card-body">
+									<div class="dash-widget-header">
+										<span class="dash-widget-icon text-success">
+											<i class="fe fe-credit-card"></i>
+										</span>
+										<div class="dash-count">
+											<h3><%= totalPatients %></h3>
+										</div>
+									</div>
+									<div class="dash-widget-info">
+										
+										<h6 class="text-muted">Patients</h6>
+										<div class="progress progress-sm">
+											<div class="progress-bar bg-success w-50"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-3 col-sm-6 col-12">
+							<div class="card">
+								<div class="card-body">
+									<div class="dash-widget-header">
+										<span class="dash-widget-icon text-danger border-danger">
+											<i class="fe fe-money"></i>
+										</span>
+										<div class="dash-count">
+											<h3><%= totalRdvs %></h3>
+										</div>
+									</div>
+									<div class="dash-widget-info">
+										
+										<h6 class="text-muted">Appointment</h6>
+										<div class="progress progress-sm">
+											<div class="progress-bar bg-danger w-50"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+					<div class="card card-table">
+						<div class="card-header">
+							<h4 class="card-title">Appointment List</h4>
+						</div>
+						<div class="card-body">
+							<div class="table-responsive">
+								<table class="table table-hover table-center mb-0">
+									<%- include("appointments", { listeRdvs: listeRdvs }) %>
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+	
+		
+    </body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Medicabinet</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+		
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    
+    <!-- Feathericon CSS -->
+    <link rel="stylesheet" href="/css/feathericon.min.css">
+    
+    <!-- Datatables CSS -->
+    <link rel="stylesheet" href="/plugins/datatables/datatables.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+        <script src="/js/html5shiv.min.js"></script>
+        <script src="/js/respond.min.js"></script>
+</head>
+<body>
+    <style>
+        .custom-message {
+          background-color: #d4e6f1; 
+          border: 1px solid #aed6f1;
+          border-radius: 10px;
+          padding: 20px;
+          text-align: center;
+          color: #2e86c1;
+          font-size: 18px;
+          margin-top: 5%;
+          margin-left:20%;
+          margin-right:30%;
+          width:50;
+        }
+      
+        .custom-message .emoji {
+          font-size: 24px;
+          margin-left: 10px;
+        }
+      </style>
+      
+    <%- include("side_bar") %>
+
+    <div class="main-content">
+        <%- include (body) %>
+    </div>
+	
+		<!-- jQuery -->
+        <script src="/js/jquery-3.2.1.min.js"></script>
+		
+		<!-- Bootstrap Core JS -->
+        <script src="/js/popper.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+		
+		<!-- Slimscroll JS -->
+        <script src="/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+		
+		<!-- Datatables JS -->
+		<script src="/plugins/datatables/jquery.dataTables.min.js"></script>
+		<script src="/plugins/datatables/datatables.min.js"></script>
+		
+		<!-- Custom JS -->
+		<script  src="/js/script.js"></script>
+</body>
+</html>

@@ -1,42 +1,26 @@
-const {DataTypes}=require('sequelize')
-const sequelize=require('../config/dbConfig')
-const Prescription=sequelize.define('prescription',{
-    id:{
-        type:DataTypes.BIGINT,
-        allowNull:false,
-        primaryKey:true,
-        autoIncrement:true,
-      
-          },
-    contenu_prescription:{
-        type:DataTypes.STRING,
-        allowNull:false
-    },
-    date_debut:{
-        type:DataTypes.DATE,
-        allowNull:false,
-    },
-    date_fin:{
-        type:DataTypes.DATE,
-        allowNull:false,
-    },
-    consultation:{
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'consultation',  
-            key: 'id'
-        },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE' 
-    },
-    createdAt: {
-        allowNull: false,
-        type: DataTypes.DATE
-    },
-    updatedAt: {
-        allowNull: false,
-        type: DataTypes.DATE
-    }
-})
-module.exports=Prescription
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const prescriptionSchema = new Schema({
+  contenu_prescription: {
+    type: String,
+    required: true
+  },
+  date_debut: {
+    type: Date,
+    required: true,
+  },
+  date_fin: {
+    type: Date,
+    required: true,
+  },
+  consultation: {
+    type: Schema.Types.ObjectId,
+    ref: 'Consultation',
+    required: true
+  }
+});
+
+const Prescription = mongoose.model('Prescription', prescriptionSchema);
+
+module.exports = Prescription;

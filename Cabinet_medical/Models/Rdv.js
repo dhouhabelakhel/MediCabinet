@@ -1,49 +1,28 @@
-const {DataTypes}=require('sequelize')
-const sequelize=require('../config/dbConfig')
-const Rdv=sequelize.define('rdv',{
-    id:{
-        type:DataTypes.BIGINT,
-        allowNull:false,
-        primaryKey:true,
-        autoIncrement:true,
-      
-          },
-    date_rdv:{
-        type:DataTypes.DATE,
-        allowNull:false,
-    },
-    etat_rdv:{
-        type:DataTypes.BOOLEAN,
-        allowNull:false,
-        defaultValue:false
-    },
-    patient:{
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'patient',  
-            key: 'id'
-        },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
-    },
-consultation:{
-    type: DataTypes.INTEGER,
-    allowNull: true,
-    references: {
-        model: 'consultation',  
-        key: 'id'
-    },
-    onUpdate: 'CASCADE',
-    onDelete: 'CASCADE'
-},
-    createdAt: {
-        allowNull: false,
-        type: DataTypes.DATE
-    },
-    updatedAt: {
-        allowNull: false,
-        type: DataTypes.DATE
-    }
-})
-module.exports=Rdv
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const rdvSchema = new Schema({
+  date_rdv: {
+    type: Date,
+    required: true,
+  },
+  etat_rdv: {
+    type: Boolean,
+    required: true,
+    default: false
+  },
+  patient: {
+    type: Schema.Types.ObjectId,
+    ref: 'Patient',
+    required: true
+  },
+  consultation: {
+    type: Schema.Types.ObjectId,
+    ref: 'Consultation',
+    required: false
+  }
+});
+
+const rdv = mongoose.model('rdv', rdvSchema);
+
+module.exports = rdv;

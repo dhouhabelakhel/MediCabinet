@@ -1,51 +1,44 @@
-const {DataTypes}=require('sequelize')
-const sequelize=require('../config/dbConfig')
-const Medcien=sequelize.define('medcien',{
-    id:{
-        type:DataTypes.BIGINT,
-        allowNull:false,
-        primaryKey:true,
-        autoIncrement:true,
-      
-          },
-          nom_prenom:{
-            type:DataTypes.STRING,
-            allowNull:false
-      
-          },
-          email:{
-            type:DataTypes.STRING,
-            allowNull:false,
-            unique:true
-          },
-          mot_de_passe:{
-            type:DataTypes.STRING,
-            allowNull:false
-          },
-          specialite:{
-            type:DataTypes.STRING,
-            allowNull:false
-          },
-          tel:{
-            type:DataTypes.STRING,
-            unique:true,
-            allowNull:false
-          },
-          genre:{
-            type:DataTypes.ENUM('f','m'),
-            allowNull:false
-          },
-          adresse_cabinet:{
-            type:DataTypes.STRING,
-            allowNull:false
-          },
-          createdAt: {
-            allowNull: false,
-            type: DataTypes.DATE
-        },
-        updatedAt: {
-            allowNull: false,
-            type: DataTypes.DATE
-        }
-})
-module.exports=Medcien
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const medcienSchema = new Schema({
+  nom_prenom: {
+    type: String,
+    required: true
+  },
+  photo:{
+    type: String,
+    required: true
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  mot_de_passe: {
+    type: String,
+    required: true
+  },
+  spacialite: {
+    type: String,
+    required: true
+  },
+  tel: {
+    type: String,
+    unique: true,
+    required: true
+  },
+  genre: {
+    type: String,
+    enum: ['f', 'm'],
+    required: true
+  },
+  adresse_cabinet: {
+    type: String,
+    required: true
+  }
+});
+
+const Medcien = mongoose.model('medcien', medcienSchema);
+
+module.exports = Medcien;
